@@ -1,0 +1,59 @@
+EXTRAS!
+
+Welcome to the extras! Here you'll find a collection of cool little tricks and functionality build into the Datastore
+system that could enhance your workflow even further!
+
+========================================================================================================================
+1. DataElement Property Drawers
+========================================================================================================================
+
+By default, elements in a Datastore are displayed using Unity's default property fields. However, this system also
+respects custom property drawers for your DataElement class. (Please refer to Unity's documentation on Property
+Drawers)
+
+A bit of property drawer magic can go a long way! Check out the Weapons Datastore to see the weapons property drawer in
+action!
+
+========================================================================================================================
+2. Additional Datastore Properties
+========================================================================================================================
+Oftentimes, a Datastore may not be as easy as a simple list of elements. If your Datastore needs to store additional 
+properties that would not fit in a list of elements, you can easily add these properties into your custom Datastore 
+class.
+
+So long as they are serializable, you'll see them displayed under the "Open Datastore" button in the Datastore's
+inspector.
+
+========================================================================================================================
+3. Custom ReorderableList Element Drawer
+========================================================================================================================
+DataElement actually has a secret method called OnDrawElement() only used in it’s Datastore window that may be 
+insignificant for most users. 
+This method decides how to draw the individual elements in the window’s ReorderableList. (Left panel)
+
+By default, a DataElement only draws the element’s name in the Reorderable List, but in the event that you could benefit 
+from a more complex representation of an element, you have the option to modify it.
+
+Check out WeaponElement.OnDrawElement() to see how the Weapon Datastore does this.
+
+========================================================================================================================
+3. Other Ideas
+========================================================================================================================
+3.1 Singleton Datastores
+    Personally I think the singleton pattern works VERY well with Datastores. Assuming you have all your needed data in 
+    a Datastore, by making it a singleton, you don't need to give all of your scripts a reference to the object. 
+
+3.2 Unity's new Addressable Asset System
+    A potential issue with a single location for your data is loading of the asset in game. If your Datastore has a
+    bunch of references to GameObjects or images or audiofiles (etc..), when you load the Datastore, Unity will also go
+    ahead and load everything else connected to it. Increased load times because youre loading data you won't even need
+    until much later in the game is noooooo fun. But that's where Unity's new Addressable Asset System comes in handy!
+    
+    The new Addressable System will only load resources as necessary and otherwise just store string paths to their
+    locations. This means you'd essentially be swapping your resource references in your Datastore with fancy strings. 
+    And loading a bunch of strings in your Datastore is super quick!
+
+
+
+That's the end of Extras! Thanks for reading!
+- CozyHam

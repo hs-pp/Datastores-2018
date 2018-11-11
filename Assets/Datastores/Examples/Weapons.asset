@@ -1,0 +1,725 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90b8ac843e65e249812d846559cfe52, type: 3}
+  m_Name: Weapons
+  m_EditorClassIdentifier: 
+  m_elements:
+  - m_ID: 1
+    m_name: Axe
+    m_icon: {fileID: 2800000, guid: c8bc98fa9006f614186bbd2e1063533d, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 68
+    m_def: 40
+    m_spd: 60
+    m_crit: 80
+    m_weaponType: 1
+    m_rarity: 0
+    m_sellPrice: 50
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 2
+    m_name: Dead Blow Hammer
+    m_icon: {fileID: 2800000, guid: c90c87adbd440a94fad6144eabd55971, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 70
+    m_def: 60
+    m_spd: 12
+    m_crit: 70
+    m_weaponType: 3
+    m_rarity: 1
+    m_sellPrice: 200
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 3
+    m_name: Pan
+    m_icon: {fileID: 2800000, guid: 75d0d0834549c8a4ba90c5890efbc81b, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 40
+    m_def: 80
+    m_spd: 45
+    m_crit: 20
+    m_weaponType: 3
+    m_rarity: 3
+    m_sellPrice: 1000
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 10
+    m_name: Bone
+    m_icon: {fileID: 2800000, guid: fb0e0eaa8e16f2349b4fa595d30a408a, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 30
+    m_def: 10
+    m_spd: 70
+    m_crit: 20
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 20
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 11
+    m_name: Toothbrush
+    m_icon: {fileID: 2800000, guid: 124958f0c9e721f4aabae160a8def470, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 8
+    m_def: 5
+    m_spd: 99
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 1
+    m_sellPrice: 800
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 0
+    m_name: Pen
+    m_icon: {fileID: 2800000, guid: b708fecba8399fe4a998accd31682518, type: 3}
+    m_prefab: {fileID: 0}
+    m_atk: 99
+    m_def: 70
+    m_spd: 85
+    m_crit: 55
+    m_weaponType: 0
+    m_rarity: 4
+    m_sellPrice: 10000
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.118751526
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.64971733
+        value: 0.25654688
+        inSlope: -2.493474
+        outSlope: -2.493474
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1.1187515
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 12
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 13
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 14
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 15
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 16
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 17
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 18
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 19
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 20
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 21
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 22
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 23
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 24
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 25
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 26
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 27
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 28
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - m_ID: 29
+    m_name: Weapon
+    m_icon: {fileID: 0}
+    m_prefab: {fileID: 0}
+    m_atk: 100
+    m_def: 100
+    m_spd: 100
+    m_crit: 100
+    m_weaponType: 0
+    m_rarity: 0
+    m_sellPrice: 999
+    m_crazyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_editorVariables:
+    RelativeSizesX: 0.23150358
+    RelativeSizesY: 0.7684964
+    LeftScrollPos: {x: 0, y: 0}
+    RightScrollPos: {x: 0, y: 0}
+    ElementsPerPage: 6
+    CurrentPage: 1
+    TotalPages: 4
+  m_nextID: 32

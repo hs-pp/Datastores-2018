@@ -1,0 +1,116 @@
+QUICKSTART!
+
+This Quickstart guide is the fastest way to get a simple Datastore implementation up and running. It'll go through the
+bare minimum implementation so you can quickly start setting up your own Datastores. You can find any functionality
+beyond theis in Extras.
+
+This guide will walk through the creation of a DemoDatastore. You can also find it fully implemented in 
+Examples/DemoDatastore.
+
+========================================================================================================================
+1. Create the DataElement class
+========================================================================================================================
+
+The DataElement is the basic model of our data. We can extend it to store any Unity serializable data the we want.
+Inside this DemoDataElement class we will store some basic data. 
+
+DemoDataElement.cs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+using UnityEngine;
+using Datastores.Framework;
+
+[System.Serializable]
+public class DemoDataElement : DataElement
+{
+    public int aInt;
+    public string aString;
+    public GameObject aGameObject;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+========================================================================================================================
+2. Create the DemoDatastore class
+========================================================================================================================
+
+The Datastore class is the actual ScriptableObject class to store our list of DemoDataElements.
+We can keep this as an empty class.
+
+DemoDatastore.cs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+using UnityEngine;
+using Datastores.Framework;
+
+[CreateAssetMenu]
+public class DemoDatastore : Datastore<DemoDataElement>
+{
+    
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+(NOTE: Make sure to include the [CreateAssetMenu] attribute on all your Datastores! We need this to be able to create an
+instance of this ScriptableObject!!)
+
+========================================================================================================================
+3. Create an instance of the DemoDatastore class
+========================================================================================================================
+
+Navigate to 'Assets/Create/Demo Datastore' from your editor toolbar.
+
+This should create a new instance of your Datastore in whatever folder you currently are in.
+
+========================================================================================================================
+4. Do stuff with your Datastore
+========================================================================================================================
+
+4.1 Open the Datastore
+    Click the Datastore instance and navigate to the "Open Datastore" button in it's inspector.
+
+4.2 Create Entries to the Datastore
+    Click the + under your empty list of objects on the left panel of the Datastore window. This creates new entries of
+    your DemoDataElement that are viewable on the right panel.
+    
+4.3 Modify values
+    Pretty straightforward. The values you see for each of the data entries are those from DemoDataElement.
+    
+4.4 Pagination
+    The top right of the window has a little box for "ElementsPerPage" and set to '15' by default. The Datastore is 
+    paginated because oftentimes rendering too many complex Datastore elements drastically slows down the editor window.
+    Unfortunately with IMGUI, everything is rendered every update even if the contents are obfuscated by the scroll
+    panel. To avoid performance issues, we limit the number of elementes per page shown. 
+
+========================================================================================================================
+5. Using the Datastore
+========================================================================================================================
+
+Because the Datastore is all built on top of ScriptableObjects, everything you can do with a ScriptableObject you can do
+with a Datastore.
+
+Give a GameObject or script a reference to your Datastore to have access to all of your data.
+
+Datastore<T> has a few methods you can use to access your data:
+ - public T GetElementByID(int id){ ... }
+ - public T GetElementByName(string name){ ... }
+ - public IEnumerable<T> GetAllElements(){ ... }
+ 
+You can also add any other methods you feel necessary in your implemented Datastore class (ie. DemoDatastore)
+
+========================================================================================================================
+6. Datastore Library
+========================================================================================================================
+
+The Datastore Library is a separate editor window that keeps track of all your Datastore instances. 
+You can find this window in two places:
+    1. In an already opened Datastore editor window, you can find the button at the top left of the window.
+    2. From the Unity Editor window, navigate to Window/Datastore Library
+
+Use this Library to keep track of and quickly find your Datastore instances in your project!
+
+
+
+
+
+
+
+~~~
+That's the end of the Quickstart! Thanks for reading!
+- CozyHam
