@@ -9,12 +9,14 @@ No more managing the 500 ScriptableObjects holding your static game data! Throug
  And with the power of custom property drawers, you have the ability to customize the look of the editor to your heart's content. A well designed datastore can extend productivity for designers, artists, and anyone looking to modify data at any point of the development process.
 
 <h2> <strong>Features</strong> </h2>
+
 - Store <strong>anything</strong>! (Supports all Unity-serializable types)
 - All your data is consolidated down to a <strong>single ScriptableObject.</strong>
 - Full <strong>Custom Property Drawer</strong> support.
 - Fully  <strong>open source.</strong>
 
 <h2> <strong>Great use-cases include:</strong> </h2>
+
 - Static Data
     - Weapons and stats
     - Charater info
