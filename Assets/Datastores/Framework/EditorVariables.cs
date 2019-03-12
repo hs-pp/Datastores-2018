@@ -13,8 +13,11 @@ namespace Datastores.Framework
     {
         public float RelativeSizesX = 0.2f;
         public float RelativeSizesY = 0.8f;
+		public bool ShowAssetInspector = false;
+		public float RelativeAssetInspectorSize = 0.2f;
         public Vector2 LeftScrollPos;
         public Vector2 RightScrollPos;
+		public Vector2 AssetInspectorScrollPos;
         public int ElementsPerPage = 15;
         public int CurrentPage = -1;
         public int TotalPages = -1;

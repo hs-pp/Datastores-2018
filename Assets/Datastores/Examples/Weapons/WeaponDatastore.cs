@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using Datastores.Framework;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace Datastores.Examples
 {
     /// <summary>
@@ -16,5 +20,18 @@ namespace Datastores.Examples
     [CreateAssetMenu] /// <-- Make sure to include this attribute so you can actually create instances!!
     public class WeaponDatastore : Datastore<WeaponElement>
     {
-    }
+		[SerializeField]
+		public bool a;
+
+		public string b;
+
+		public Vector3 c;
+
+#if UNITY_EDITOR
+		//public override void DrawAssetInspector(SerializedObject so)
+		//{
+		//	GUILayout.Label("HGEYGFSDGDFGDFGDFGDFGDFGFGDG");
+		//}
+#endif
+	}
 }

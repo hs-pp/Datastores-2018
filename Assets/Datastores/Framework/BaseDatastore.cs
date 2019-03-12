@@ -32,6 +32,29 @@ namespace Datastores.Framework
         public virtual void DrawElement(Rect rect, SerializedProperty property)
         {
         }
+
+		public virtual void DrawAssetInspector(SerializedObject so)
+		{
+			EditorGUI.BeginChangeCheck();
+			SerializedProperty prop = so.GetIterator();
+			bool foundNext = prop.Next(true);
+			while (foundNext)
+			{
+				if (prop.displayName != "Object Hide Flags" &&
+					prop.displayName != "Script" &&
+					prop.name != "m_elements" &&
+					prop.name != "m_editorVariables" &&
+					prop.name != "m_nextID")
+				{
+					EditorGUILayout.PropertyField(prop, true);
+				}
+				foundNext = prop.NextVisible(false);
+			}
+			if (EditorGUI.EndChangeCheck())
+			{
+				so.ApplyModifiedProperties();
+			}
+		}
 #endif
         
     }
