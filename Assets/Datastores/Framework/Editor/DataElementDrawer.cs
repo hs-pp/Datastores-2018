@@ -20,7 +20,7 @@ namespace Datastores.Framework.Editor
             int depth = property.depth + 1;
             foreach (SerializedProperty childProp in property)
             {
-                if (childProp.depth == depth && childProp.name != "m_ID" && childProp.name != "m_name")
+                if (childProp.depth == depth && childProp.name != "m_id" && childProp.name != "m_name")
                 {
                     EditorGUILayout.PropertyField(childProp, true);
                 }
