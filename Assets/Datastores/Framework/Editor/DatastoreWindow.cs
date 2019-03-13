@@ -164,7 +164,6 @@ namespace Datastores.Framework.Editor
 			if (m_so != null)
 			{
 				GUILayout.Label("ElementsPerPage");
-				SerializedProperty editorVars = m_so.FindProperty(EDITOR_VARIABLES_PATH);
 
 				EditorGUI.BeginChangeCheck();
 				m_editorVars.ElementsPerPage = Mathf.Clamp(EditorGUILayout.IntField(m_editorVars.ElementsPerPage,

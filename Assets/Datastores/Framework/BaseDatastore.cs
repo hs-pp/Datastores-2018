@@ -27,13 +27,24 @@ namespace Datastores.Framework
         /// <summary>
         /// This method is needed in the EditorWindow(DatastoreWindow.cs) to draw the individual elements in the
         /// reorderable list. The actual implementation of DrawElement() should happen in any child class of
-        /// DataElement.
+        /// DataElement. Default implementation in Datastore<T>.
         /// </summary>
         public virtual void DrawElement(Rect rect, SerializedProperty property)
         {
         }
 
+		/// <summary>
+		/// DatastoreWindow calls this method when drawing the Asset Inspector.
+		/// By default, it draws all serialized values stored at the Datastore<T> implementation level.
+		/// Overriding this allows for custom editor panels that may interact uniquely to the Datastore thats displayed
+		/// right within the Datastore window.
+		/// </summary>
 		public virtual void DrawAssetInspector(SerializedObject so)
+		{
+			DefaultDrawAssetInspector(so);
+		}
+
+		protected void DefaultDrawAssetInspector(SerializedObject so)
 		{
 			EditorGUI.BeginChangeCheck();
 			SerializedProperty prop = so.GetIterator();
