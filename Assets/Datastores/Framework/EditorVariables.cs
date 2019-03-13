@@ -11,8 +11,7 @@ namespace Datastores.Framework
     [Serializable]
     public class EditorVariables
     {
-        public float RelativeSizesX = 0.2f;
-        public float RelativeSizesY = 0.8f;
+        public float RelativeLeftPanelRatio = 0.2f;
 		public bool ShowAssetInspector = false;
 		public float RelativeAssetInspectorSize = 0.2f;
         public Vector2 LeftScrollPos;

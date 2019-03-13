@@ -38,6 +38,16 @@ namespace Datastores.Framework.Editor
 		private const string EDITOR_VARIABLES_PATH = "m_editorVariables";
 		private const string NEXTID_PATH = "m_nextID";
 
+		private const string RELATIVE_LEFT_PANEL_RATIO = "RelativeLeftPanelRatio";
+		private const string SHOW_ASSET_INSPECTOR = "ShowAssetInspector";
+		private const string RELATIVE_ASSET_INSPECTOR_SIZE = "RelativeAssetInspectorSize";
+		private const string LEFT_SCROLL_POS = "LeftScrollPos";
+		private const string RIGHT_SCROLL_POS = "RightScrollPos";
+		private const string ASSET_INSPECTOR_SCROLL_POS = "AssetInspectorScrollPos";
+		private const string ELEMENTS_PER_PAGE = "ElementsPerPage";
+		private const string CURRENT_PAGE = "CurrentPage";
+		private const string TOTAL_PAGES = "TotalPages";
+
 		#region Init
 		//============================================================================================================//
 		// Init
@@ -521,16 +531,15 @@ namespace Datastores.Framework.Editor
 		{
 			if (m_so == null || m_elementsList == null || m_editorVars == null) return;
 			SerializedProperty editorVarsSP = m_so.FindProperty(EDITOR_VARIABLES_PATH);
-			editorVarsSP.FindPropertyRelative("RelativeSizesX").floatValue = m_splitterState.relativeSizes[0];
-			editorVarsSP.FindPropertyRelative("RelativeSizesY").floatValue = m_splitterState.relativeSizes[1];
-			editorVarsSP.FindPropertyRelative("ShowAssetInspector").boolValue = m_showAssetInspector;
-			editorVarsSP.FindPropertyRelative("RelativeAssetInspectorSize").floatValue = m_assetInspectorSplitterState.relativeSizes[1];
-			editorVarsSP.FindPropertyRelative("LeftScrollPos").vector2Value = m_editorVars.LeftScrollPos;
-			editorVarsSP.FindPropertyRelative("RightScrollPos").vector2Value = m_editorVars.RightScrollPos;
-			editorVarsSP.FindPropertyRelative("AssetInspectorScrollPos").vector2Value = m_editorVars.AssetInspectorScrollPos;
-			editorVarsSP.FindPropertyRelative("ElementsPerPage").intValue = m_editorVars.ElementsPerPage;
-			editorVarsSP.FindPropertyRelative("CurrentPage").intValue = m_editorVars.CurrentPage;
-			editorVarsSP.FindPropertyRelative("TotalPages").intValue = m_editorVars.TotalPages;
+			editorVarsSP.FindPropertyRelative(RELATIVE_LEFT_PANEL_RATIO).floatValue = m_splitterState.relativeSizes[0];
+			editorVarsSP.FindPropertyRelative(SHOW_ASSET_INSPECTOR).boolValue = m_showAssetInspector;
+			editorVarsSP.FindPropertyRelative(RELATIVE_ASSET_INSPECTOR_SIZE).floatValue = m_assetInspectorSplitterState.relativeSizes[1];
+			editorVarsSP.FindPropertyRelative(LEFT_SCROLL_POS).vector2Value = m_editorVars.LeftScrollPos;
+			editorVarsSP.FindPropertyRelative(RIGHT_SCROLL_POS).vector2Value = m_editorVars.RightScrollPos;
+			editorVarsSP.FindPropertyRelative(ASSET_INSPECTOR_SCROLL_POS).vector2Value = m_editorVars.AssetInspectorScrollPos;
+			editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue = m_editorVars.ElementsPerPage;
+			editorVarsSP.FindPropertyRelative(CURRENT_PAGE).intValue = m_editorVars.CurrentPage;
+			editorVarsSP.FindPropertyRelative(TOTAL_PAGES).intValue = m_editorVars.TotalPages;
 
 			m_so.ApplyModifiedProperties();
 		}
@@ -543,27 +552,27 @@ namespace Datastores.Framework.Editor
 			if (m_so == null) return;
 			SerializedProperty editorVarsSP = m_so.FindProperty(EDITOR_VARIABLES_PATH);
 			m_editorVars = new EditorVariables();
-			m_splitterState.relativeSizes[0] = editorVarsSP.FindPropertyRelative("RelativeSizesX").floatValue;
-			m_splitterState.relativeSizes[1] = editorVarsSP.FindPropertyRelative("RelativeSizesY").floatValue;
-			m_showAssetInspector = editorVarsSP.FindPropertyRelative("ShowAssetInspector").boolValue;
-			m_assetInspectorSplitterState.relativeSizes[1] = editorVarsSP.FindPropertyRelative("RelativeAssetInspectorSize").floatValue;
+			m_splitterState.relativeSizes[0] = editorVarsSP.FindPropertyRelative(RELATIVE_LEFT_PANEL_RATIO).floatValue;
+			m_splitterState.relativeSizes[1] = 1 - m_splitterState.relativeSizes[0];
+			m_showAssetInspector = editorVarsSP.FindPropertyRelative(SHOW_ASSET_INSPECTOR).boolValue;
+			m_assetInspectorSplitterState.relativeSizes[1] = editorVarsSP.FindPropertyRelative(RELATIVE_ASSET_INSPECTOR_SIZE).floatValue;
 			m_assetInspectorSplitterState.relativeSizes[0] = 1 - m_assetInspectorSplitterState.relativeSizes[1];
-			m_editorVars.LeftScrollPos = editorVarsSP.FindPropertyRelative("LeftScrollPos").vector2Value;
-			m_editorVars.RightScrollPos = editorVarsSP.FindPropertyRelative("RightScrollPos").vector2Value;
-			m_editorVars.AssetInspectorScrollPos = editorVarsSP.FindPropertyRelative("AssetInspectorScrollPos").vector2Value;
-			m_editorVars.ElementsPerPage = editorVarsSP.FindPropertyRelative("ElementsPerPage").intValue;
-			m_editorVars.CurrentPage = editorVarsSP.FindPropertyRelative("CurrentPage").intValue;
-			m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative("TotalPages").intValue;
+			m_editorVars.LeftScrollPos = editorVarsSP.FindPropertyRelative(LEFT_SCROLL_POS).vector2Value;
+			m_editorVars.RightScrollPos = editorVarsSP.FindPropertyRelative(RIGHT_SCROLL_POS).vector2Value;
+			m_editorVars.AssetInspectorScrollPos = editorVarsSP.FindPropertyRelative(ASSET_INSPECTOR_SCROLL_POS).vector2Value;
+			m_editorVars.ElementsPerPage = editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue;
+			m_editorVars.CurrentPage = editorVarsSP.FindPropertyRelative(CURRENT_PAGE).intValue;
+			m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative(TOTAL_PAGES).intValue;
 		}
 
 		private void CheckForEditorVarsChanges()
 		{
 			SerializedProperty editorVarsSP = m_so.FindProperty(EDITOR_VARIABLES_PATH);
-			if (editorVarsSP.FindPropertyRelative("ElementsPerPage").intValue != m_editorVars.ElementsPerPage)
+			if (editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue != m_editorVars.ElementsPerPage)
 			{
-				m_editorVars.ElementsPerPage = editorVarsSP.FindPropertyRelative("ElementsPerPage").intValue;
-				m_editorVars.CurrentPage = editorVarsSP.FindPropertyRelative("CurrentPage").intValue;
-				m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative("TotalPages").intValue;
+				m_editorVars.ElementsPerPage = editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue;
+				m_editorVars.CurrentPage = editorVarsSP.FindPropertyRelative(CURRENT_PAGE).intValue;
+				m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative(TOTAL_PAGES).intValue;
 			}
 		}
 
