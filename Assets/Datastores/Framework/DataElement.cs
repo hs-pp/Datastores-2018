@@ -16,15 +16,15 @@ namespace Datastores.Framework
         // All DataElements need an ID and a Name to be identified by.
         // These will exist in any other inherited class.
         //============================================================================================================//
-        [SerializeField] private int m_ID;
+        [SerializeField] private string m_id;
         [SerializeField] private string m_name;
         
-        public int ID
+        public string Id
         {
-            get { return m_ID; }
+            get { return m_id; }
 
 #if UNITY_EDITOR
-            set { m_ID = value; }
+            set { m_id = value; }
 #endif
         }
 

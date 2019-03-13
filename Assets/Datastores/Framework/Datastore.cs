@@ -27,9 +27,9 @@ namespace Datastores.Framework
         /// Get an element by provided id.
         /// If none is found, returns null.
         /// </summary>
-        public T GetElementByID(int id)
+        public T GetElementByID(string id)
         {
-            return m_elements.Find(x => x.ID == id);
+            return m_elements.Find(x => x.Id.Equals(id));
         }
 
         /// <summary>
@@ -62,12 +62,13 @@ namespace Datastores.Framework
         /// </summary>
         [SerializeField] private EditorVariables m_editorVariables;
 
-        [SerializeField] private int m_nextID;
-
+		/// <summary>
+		/// On add new element, we must give the newly created element a unique id before adding it to our list of elements.
+		/// </summary>
         public override void AddNewElement()
         {
             T newElement = (T)Activator.CreateInstance(typeof(T));
-            newElement.ID = m_nextID++;
+            newElement.Id = GUID.Generate().ToString();
             m_elements.Add(newElement);
         }
 

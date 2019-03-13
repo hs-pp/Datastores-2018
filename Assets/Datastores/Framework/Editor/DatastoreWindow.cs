@@ -36,7 +36,6 @@ namespace Datastores.Framework.Editor
 		//============================================================================================================//
 		private const string ELEMENTS_PATH = "m_elements";
 		private const string EDITOR_VARIABLES_PATH = "m_editorVariables";
-		private const string NEXTID_PATH = "m_nextID";
 
 		private const string RELATIVE_LEFT_PANEL_RATIO = "RelativeLeftPanelRatio";
 		private const string SHOW_ASSET_INSPECTOR = "ShowAssetInspector";
@@ -128,8 +127,6 @@ namespace Datastores.Framework.Editor
 			//Get any updates since the last frame.
 			m_so.Update();
 
-			CheckForEditorVarsChanges();
-
 			DrawToolbar();
 			GUILayout.BeginVertical();
 			DrawTitle();
@@ -168,16 +165,14 @@ namespace Datastores.Framework.Editor
 			{
 				GUILayout.Label("ElementsPerPage");
 				SerializedProperty editorVars = m_so.FindProperty(EDITOR_VARIABLES_PATH);
-				SerializedProperty elementsPerPage = editorVars.FindPropertyRelative("ElementsPerPage");
 
 				EditorGUI.BeginChangeCheck();
-				elementsPerPage.intValue = Mathf.Clamp(EditorGUILayout.IntField(elementsPerPage.intValue,
+				m_editorVars.ElementsPerPage = Mathf.Clamp(EditorGUILayout.IntField(m_editorVars.ElementsPerPage,
 					GUILayout.Height(14), GUILayout.Width(22)), 1, 99);
 				if (EditorGUI.EndChangeCheck())
 				{
-					editorVars.FindPropertyRelative("CurrentPage").intValue = -1;
-					editorVars.FindPropertyRelative("TotalPages").intValue = -1;
-					m_so.ApplyModifiedProperties();
+					m_editorVars.CurrentPage = -1;
+					m_editorVars.TotalPages = -1;
 				}
 
 				GUILayout.Space(6);
@@ -517,14 +512,6 @@ namespace Datastores.Framework.Editor
 		}
 
 		/// <summary>
-		/// Get the next ID and then increment it.
-		/// </summary>
-		private int GetNextID()
-		{
-			return m_so.FindProperty(NEXTID_PATH).intValue++;
-		}
-
-		/// <summary>
 		/// Save out the local instance of EditorVariables to the serialized object.
 		/// </summary>
 		private void SerializeEditorVars()
@@ -565,17 +552,9 @@ namespace Datastores.Framework.Editor
 			m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative(TOTAL_PAGES).intValue;
 		}
 
-		private void CheckForEditorVarsChanges()
-		{
-			SerializedProperty editorVarsSP = m_so.FindProperty(EDITOR_VARIABLES_PATH);
-			if (editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue != m_editorVars.ElementsPerPage)
-			{
-				m_editorVars.ElementsPerPage = editorVarsSP.FindPropertyRelative(ELEMENTS_PER_PAGE).intValue;
-				m_editorVars.CurrentPage = editorVarsSP.FindPropertyRelative(CURRENT_PAGE).intValue;
-				m_editorVars.TotalPages = editorVarsSP.FindPropertyRelative(TOTAL_PAGES).intValue;
-			}
-		}
-
+		/// <summary>
+		/// Ability to double click the asset to open the DatastoreWindow.
+		/// </summary>
 		[OnOpenAsset(0)]
 		public static bool OnDatastoreAssetClicked(int instanceID, int line)
 		{

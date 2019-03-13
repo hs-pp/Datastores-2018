@@ -20,11 +20,5 @@ namespace Datastores.Framework
         public int ElementsPerPage = 15;
         public int CurrentPage = -1;
         public int TotalPages = -1;
-
-        public EditorVariables()
-        {
-            LeftScrollPos = Vector2.zero;
-            RightScrollPos = Vector2.zero;
-        }
     }
 }

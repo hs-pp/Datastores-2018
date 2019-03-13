@@ -20,7 +20,7 @@ namespace Datastores.Framework.Editor
             property.FindPropertyRelative("m_name").stringValue =
                 GUILayout.TextField(property.FindPropertyRelative("m_name").stringValue, GUILayout.Width(250));
 
-            GUILayout.Label(string.Format("ID: {0}", property.FindPropertyRelative("m_ID").intValue), EditorConstants.DataElementIDStyle);
+            GUILayout.Label(string.Format("ID: {0}", property.FindPropertyRelative("m_id").stringValue), EditorConstants.DataElementIDStyle);
             
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(4);
