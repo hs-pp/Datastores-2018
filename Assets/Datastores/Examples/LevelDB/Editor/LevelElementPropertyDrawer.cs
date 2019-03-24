@@ -14,8 +14,10 @@ namespace LevelDatabase
 			string scenePath = sceneProp.FindPropertyRelative("m_scenePath").stringValue;
 			bool sceneExists = scenePath != string.Empty;
 			bool existsInBuildList = sceneExists ? LevelElement.ExistsInBuildList(scenePath) : false;
+            SerializedProperty componentsProp = property.FindPropertyRelative("m_components");
 
-			GUILayout.Space(6);
+
+            GUILayout.Space(6);
 			GUILayout.BeginHorizontal();
 
 			DrawStatus(sceneExists, existsInBuildList);
@@ -23,13 +25,18 @@ namespace LevelDatabase
 			GUILayout.BeginVertical();
 			Datastores.Framework.Editor.DataElementHelper.OnGUI_DrawDefaultValues(property);
 			GUILayout.Space(4);
+            EditorGUI.BeginChangeCheck();
 			EditorGUILayout.PropertyField(sceneProp);
+            if(EditorGUI.EndChangeCheck())
+            {
+                CheckIfSceneExists(sceneProp);
+            }
 			GUILayout.Space(6);
 			GUILayout.EndVertical();
 
 			GUILayout.EndHorizontal();
 
-			DrawComponents(property.FindPropertyRelative("m_components"));
+			DrawComponents(componentsProp);
 			GUILayout.Space(4);
 			DrawNewComponentButton(property);
 
@@ -207,11 +214,29 @@ namespace LevelDatabase
 
 		private void CheckIfSceneExists(SerializedProperty sceneObject)
 		{
-			if (sceneObject.objectReferenceValue == null)
+            SerializedProperty sceneListProp = sceneObject.serializedObject.FindProperty("m_elements");
+            SerializedProperty sceneObjectScene = sceneObject.FindPropertyRelative("m_sceneAsset");
+            if (sceneObjectScene.objectReferenceValue == null)
 			{
 				return;
 			}
-		}
+            for(int i = 0; i < sceneListProp.arraySize; i++)
+            {
+                SerializedProperty loopSceneProp = sceneListProp.GetArrayElementAtIndex(i).FindPropertyRelative("m_scene");
+                if (!SerializedProperty.EqualContents(sceneObject, loopSceneProp))
+                {
+                    if(sceneObjectScene.objectReferenceValue == loopSceneProp.FindPropertyRelative("m_sceneAsset").objectReferenceValue)
+                    {
+                        if (EditorUtility.DisplayDialog("Error!", "This scene already exists!", "Ok"))
+                        {
+                            sceneObjectScene.objectReferenceValue = null;
+                            sceneObject.FindPropertyRelative("m_scenePath").stringValue = "";
+                            return;
+                        }
+                    }
+                }
+            }
+        }
 
 	}
 }

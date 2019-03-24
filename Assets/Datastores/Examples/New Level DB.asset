@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -20,25 +21,11 @@ MonoBehaviour:
     m_components:
     - {fileID: 114837265088561626}
     m_componentTypeSelectIndex: 0
-  - m_id: 6067ae2e9f0723d43bd0fe1aa81d1d0e
-    m_name: testScene 2
-    m_scene:
-      m_sceneAsset: {fileID: 102900000, guid: eec03f0370ac7a94cb5a2550b7e3a6a0, type: 3}
-      m_scenePath: Assets/Datastores/Examples/testScene2.unity
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 46fca9e8cb4e0074f880ed7516e3b8ae
-    m_name: none
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
   - m_id: b7c37f786382090408ce1f9ede2586db
     m_name: 
     m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
+      m_sceneAsset: {fileID: 102900000, guid: eec03f0370ac7a94cb5a2550b7e3a6a0, type: 3}
+      m_scenePath: Assets/Datastores/Examples/testScene2.unity
     m_components: []
     m_componentTypeSelectIndex: 0
   - m_id: 23bb1088a37c5654e9d5ac3aaeaabbe0
@@ -55,94 +42,22 @@ MonoBehaviour:
       m_scenePath: 
     m_components: []
     m_componentTypeSelectIndex: 0
-  - m_id: 00d587b82f7acfa4dbca2e44c0ac535c
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: ff7ea37950e50df43bd66d5780091483
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 41e496e4196c6994c8d95830e0e1e743
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: eac5431322fd7414093ee052f5fc105b
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: b72eefb7909bc3144b6d55555e3ce8b8
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 8b9b57a899061ff49b9b898fb538cedb
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 3865b2dcd7e45864c8454b2913709dc3
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 035570fcdea7dec4fb4d7847b3942c7d
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
-  - m_id: 31bcf2addb8664046890da370a93d4d9
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 102900000, guid: 6d6f0d665a6f33646a2cad4959f60785, type: 3}
-      m_scenePath: Assets/Datastores/Examples/scene2.unity
-    m_components:
-    - {fileID: 114230502954259960}
-    - {fileID: 114682562053975518}
-    - {fileID: 114587643182926404}
-    m_componentTypeSelectIndex: 0
-  - m_id: 8743cd1d85558d849afa30b67265b0d6
-    m_name: 
-    m_scene:
-      m_sceneAsset: {fileID: 0}
-      m_scenePath: 
-    m_components: []
-    m_componentTypeSelectIndex: 0
   m_editorVariables:
-    RelativeLeftPanelRatio: 0.17653167
+    RelativeLeftPanelRatio: 0.207416
     ShowAssetInspector: 0
-    RelativeAssetInspectorSize: 0.2
+    RelativeAssetInspectorSize: 0.6992754
     LeftScrollPos: {x: 0, y: 0}
     RightScrollPos: {x: 0, y: 0}
     AssetInspectorScrollPos: {x: 0, y: 0}
     ElementsPerPage: 1
-    CurrentPage: 15
-    TotalPages: 16
+    CurrentPage: 4
+    TotalPages: 4
 --- !u!114 &114230502954259960
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -151,11 +66,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   a: 0
   b: 
+--- !u!114 &114446843108036086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949e5140eb84d8743a8167f8ef591437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vec: {x: 0, y: 0, z: 0}
 --- !u!114 &114587643182926404
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -164,23 +93,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abool: 1
   b: 
---- !u!114 &114682562053975518
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949e5140eb84d8743a8167f8ef591437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vec: {x: 2, y: 0, z: 0}
 --- !u!114 &114837265088561626
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
