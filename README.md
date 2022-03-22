@@ -1,4 +1,4 @@
-# Datastores_2018
+# Datastores-2018
 
 Datastores is your one stop local database system for Unity!
 
